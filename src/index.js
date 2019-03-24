@@ -51,8 +51,6 @@ type World = {
 // init
 ////////
 
-const N = 5
-const W = 55
 const world = {
   building: Array.from({ length: N }),
   lift: {
@@ -71,9 +69,6 @@ const world = {
 ////////
 // Draw
 ////////
-
-const FLOOR_HEIGHT = 100
-const FLOOR_WIDTH = 500
 
 c.translate(20, 600)
 c.scale(1, -1)
@@ -131,13 +126,6 @@ world.workers[0].y = world.lift.y = 2
 ////////
 
 const computeNextStop = () => Math.floor(Math.random() * world.building.length)
-
-const LIFT_VELOCITY = 0.02
-const WORKER_VELOCITY = 1
-const LIFT_CLOSE_DOOR_COUNTDOWN = 30
-const WORKER_SLACKING_COUNTDOWN = 30
-const LIFT_AREA = [50, 120]
-const LIFT_BORDING_ZONE = 20
 
 const step = () => {
   const { lift, workers } = world
